@@ -1,0 +1,13 @@
+.primary {
+  padding: 0.3em;
+  width: 100%;
+  font-weight: bold;
+  background-color: var(--primaryColor);
+  border: solid 0.0625em var(--hover);
+  border-radius: 600em;
+  color: white;
+
+  &:hover {
+    background-color: var(--hover);
+  }
+}

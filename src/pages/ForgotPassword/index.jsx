@@ -1,5 +1,5 @@
 function ForgotPassword() {
-    return ( <h2>Forgot password</h2> );
+    return ( <h1>Forgot password</h1> );
 }
 
 export default ForgotPassword;
