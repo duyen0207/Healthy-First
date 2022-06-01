@@ -1,9 +1,14 @@
+@use "variables" as v;
+
+
 @import "normalize.css";
 
 @font-face {
   font-family: Healthy First SemiBold;
   src: url(~/public/assets/font/Fredoka-SemiBold.ttf);
 }
+
+
 
 // @font-face {
 //   font-family: Healthy First Bold;
@@ -25,6 +30,10 @@
 
 html {
   font-size: 10px;
+
+  // @include v.tablet {
+  //   // font-size: 14px;
+  // }
 }
 
 body {
@@ -38,6 +47,7 @@ body {
 html,
 body {
   height: 100%;
+  width: 100%;
 }
 
 // align center 1 item in div tag
@@ -46,23 +56,34 @@ div.global-center {
   justify-content: center;
 }
 
+div.gray-background {
+  background-color: black;
+  position: relative;
+  opacity: 0.6;
+  width: 100%;
+  color: white;
+  border-radius: 2em;
+  padding: 0 2em;
+}
+
 .app-name {
   color: var(--primaryColor);
+  line-height: 1.5625em;
+  margin-bottom: 0;
 }
 
 .carousel,
-.carousel .carousel-item {
+.carousel .carousel-item,
+.carousel-inner {
   height: 100%;
-  position: relative;
+  // position: relative;
+  @include v.mobile {
+    
+  }
+  
 }
 
-.carousel-item img {
-  // position: absolute;
+.carousel-item > img {
   object-fit: cover;
-  // top: 0;
-  // left: 0;
-  // bottom: 0;
-  // right: 0;
-  min-height: 525px;
-  max-height: 525px;
+  height: 100%;
 }

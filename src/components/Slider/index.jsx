@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function Slider() {
   const image = [
@@ -25,10 +24,13 @@ function Slider() {
             <Carousel.Item>
               <img className="d-block w-100" src={item.src} />
               <Carousel.Caption>
-                <h3>Healthy First</h3>
-                <p>
-                  Hệ thống quản lý các cơ sở sản xuất thực phẩm, kinh doanh dịch vụ ăn uống
-                </p>
+                <div className="gray-background">
+                  <h3>Healthy First</h3>
+                  <p>
+                    Hệ thống quản lý các cơ sở sản xuất thực phẩm, kinh doanh
+                    dịch vụ ăn uống
+                  </p>
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
           );
