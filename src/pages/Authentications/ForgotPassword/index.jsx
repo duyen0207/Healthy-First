@@ -14,7 +14,9 @@ function ForgotPassword() {
       <div className={style.background}>
         <div className={style.container}>
           <div className={style.login}>
-            <Logo />
+            <div className={style.logoContainer}>
+              <Logo />
+            </div>
 
             <h2>Forgot Password?</h2>
 
@@ -32,15 +34,17 @@ function ForgotPassword() {
                   />
                 </div>
 
-                <button type="submit" className={clsx(buttonStyles.primary, style.authBtn)}>
+                <button
+                  type="submit"
+                  className={clsx(buttonStyles.primary, style.authBtn)}
+                >
                   Tiếp tục
                 </button>
                 <div className={style.comeBack}>
-                    <Link to="/login"> 
-                      <i className={style.leftarrow}></i> 
-                      Back to login
-                    </Link>
-                 
+                  <Link to="/login">
+                    <i className={style.leftarrow}></i>
+                    Back to login
+                  </Link>
                 </div>
               </form>
             </div>

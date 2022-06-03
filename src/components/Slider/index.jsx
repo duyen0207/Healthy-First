@@ -1,19 +1,23 @@
 import React, { Fragment } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
+import Images from "../GlobalStyles/Images";
+
 function Slider() {
   const image = [
     {
       id: 1,
-      src: "../../assets/images/slide1.jpg",
+      // src: "../../assets/images/slide1.jpg",
+      src: Images.slider1,
+
     },
     {
       id: 2,
-      src: "../../assets/images/slide2.jpg",
+      src: Images.slider2,
     },
     {
       id: 3,
-      src: "../../assets/images/slide3.jpg",
+      src: Images.slider3,
     },
   ];
   return (

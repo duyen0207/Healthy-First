@@ -1,14 +1,11 @@
 @use "variables" as v;
 
-
 @import "normalize.css";
 
 @font-face {
   font-family: Healthy First SemiBold;
-  src: url(~/public/assets/font/Fredoka-SemiBold.ttf);
+  src: url(../../assets/font/Fredoka-SemiBold.ttf);
 }
-
-
 
 // @font-face {
 //   font-family: Healthy First Bold;
@@ -41,6 +38,7 @@ body {
   font-size: 1.4em;
   line-height: 1.5;
   text-rendering: optimizeSpeed;
+  // background-color: green;
 }
 
 #root,
@@ -78,9 +76,7 @@ div.gray-background {
   height: 100%;
   // position: relative;
   @include v.mobile {
-    
   }
-  
 }
 
 .carousel-item > img {

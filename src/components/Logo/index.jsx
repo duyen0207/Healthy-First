@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import Images from "../GlobalStyles/Images";
+
 import style from "./Logo.module.scss";
 
 function Logo() {
@@ -7,8 +9,9 @@ function Logo() {
     <div className={clsx(style.logo, "global-center")}>
       <img
         className={style.logoImg}
-        src="../../assets/healthy-first-logo.png"
+        src={Images.logo}
         alt="healthy-first-logo"
+
       />
       <h3 className="app-name">Healthy First</h3>
     </div>

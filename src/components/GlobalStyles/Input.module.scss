@@ -1,6 +1,40 @@
+@use "variables" as v;
+
 .primary {
-    padding: 0.3em 0.8em;
-    margin: 0.25em 0;
-    border: solid 0.0625em rgb(159, 159, 159);
-    border-radius: 600em;
+  padding: 0.3em 0.8em;
+  margin: 0.25em 0;
+  border: solid 0.0625em rgb(159, 159, 159);
+  border-radius: 600em;
+}
+
+.searchInput {
+  background-image: url();
+}
+
+// .clearInput {
+//   background-color: white;
+//   background-image: url(~/public/assets/images/icons/close-circle-fill.png);
+//   background-size: v.$small-icon v.$small-icon;
+//   height: v.$small-icon;
+//   width: v.$small-icon;
+//   border-style: none;
+// }
+
+.search {
+  background: {
+    image: url(../../assets/images/icons/search-fill.png);
+    size: v.$small-icon v.$small-icon;
+  }
+  background-repeat: no-repeat;
+  background-position: 0.6em center;
+  padding-left: 2.2em;
+  padding-right: 2em;
+  width: 100%;
+  height: 2.5em;
+  border-width: 0.12em;
+
+  &:focus {
+    background-image: none;
+    padding-left: 1em;
+  }
 }

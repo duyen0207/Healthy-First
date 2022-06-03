@@ -1,0 +1,18 @@
+.navItem {
+    // display: flex;
+    // background-color: gray;
+    padding: 0.2em 1em;
+    border-radius: 0.4em;
+    // color: #fff;
+    background-color: skyblue;
+    // width: 30em;
+    // height: 30em;
+
+    &:hover {
+        // color: black;
+    }
+}
+.itemName {
+    margin-left: 0.5em;
+    // color: #fff;
+}

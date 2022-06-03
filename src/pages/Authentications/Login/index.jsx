@@ -18,7 +18,10 @@ function Login() {
             <Slider />
           </div>
           <div className={style.login}>
-            <Logo />
+            
+            <div className={style.logoContainer}>
+              <Logo />
+            </div>
 
             <h2>Đăng nhập</h2>
 
@@ -51,7 +54,6 @@ function Login() {
                   </label>
                   <Link to="/forgot-password">Quên mật khẩu?</Link>
                 </div>
-
                 <button type="submit" className={clsx(buttonStyles.primary, style.authBtn)}>
                   Đăng nhập
                 </button>

@@ -16,7 +16,9 @@ function ResetPassword() {
       <div className={style.background}>
         <div className={style.container}>
           <div className={style.login}>
-            <Logo />
+            <div className={style.logoContainer}>
+              <Logo />
+            </div>
 
             <h2 className={thisStyle.title}>Reset Password</h2>
 
