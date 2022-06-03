@@ -48,7 +48,7 @@ function Popup({
             required
             className={style.input}
             type="text"
-            placeholder={input}
+            placeholder={input.label}
             onChange={(e) => {
               const temp = {};
               temp[input.name] = e.target.value;
