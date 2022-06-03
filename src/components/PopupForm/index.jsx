@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal, Button, Input } from "antd";
 import style from "./PopupForm.module.scss";
 
@@ -11,6 +11,15 @@ function Popup({
   handleSubmit,
 }) {
   const [input, setInput] = useState({});
+  useEffect(() => {
+    inputList.map((input) => {
+      const temp = {};
+      temp[input.name] = "";
+      setInput((previous) => {
+        return { ...previous, ...temp };
+      });
+    });
+  }, []);
   return (
     <Modal
       visible={isVisible}
@@ -32,7 +41,8 @@ function Popup({
           key="submit"
           type="primary"
           onClick={() => {
-            handleSubmit(input);
+            if (!Object.values(input).includes("")) handleSubmit(input);
+            else alert("Input required");
           }}
           style={{ backgroundColor: "#30ABC2", borderRadius: "10px" }}
         >
