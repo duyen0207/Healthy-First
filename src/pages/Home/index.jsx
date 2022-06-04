@@ -3,6 +3,8 @@ import "antd/dist/antd.css";
 import { Button } from "antd";
 import PopupForm from "../../components/PopupForm";
 import PopupNotification from "../../components/PopupNotification";
+import Navbar from "../../components/Layout/Navbar";
+
 function Home() {
   //Code phần này nên đưa vào 1 component riêng để có thể tái sử dụng trong trang quản
   const [showPopup, setShowPopup] = useState(false);
@@ -26,6 +28,7 @@ function Home() {
   };
   return (
     <>
+      <Navbar />
       <Button type="primary" onClick={handleShowPopup}>
         Show popup
       </Button>

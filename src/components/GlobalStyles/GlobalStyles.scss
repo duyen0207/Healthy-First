@@ -17,6 +17,7 @@
   --primaryColor: #32b3ca;
   --hover: #6fc6d6;
   --background: #b1dee6;
+  --logo-color:#226570;
 }
 
 * {
@@ -43,7 +44,8 @@ body {
 
 #root,
 html,
-body {
+body,
+.content {
   height: 100%;
   width: 100%;
 }
@@ -65,10 +67,12 @@ div.gray-background {
 }
 
 .app-name {
-  color: var(--primaryColor);
+  color: var(--logo-color);
   line-height: 1.5625em;
   margin-bottom: 0;
 }
+
+// Slider bootstrap
 
 .carousel,
 .carousel .carousel-item,
@@ -82,4 +86,69 @@ div.gray-background {
 .carousel-item > img {
   object-fit: cover;
   height: 100%;
+}
+
+// antd Tabs
+// .ant-tabs-tab{
+//   padding: 0;
+//   margin: 0;
+// }
+
+.ant-tabs-nav {
+  // background-color: gray;
+  border-style: solid;
+  border-color: gray;
+  border-width: 0 0.1em 0 0;
+  padding: 0.5em;
+}
+
+// .ant-tabs-tab{
+//   border: solid;
+//   text-align: center;
+//   align-items: center;
+// }
+.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+  // background-color: green;
+  // margin: 0;
+  // padding: 0;
+}
+
+.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+  background-color: white;
+  // margin: 0;
+  padding: 0;
+  // border-radius: 0.5em;
+  &:active {
+    // background-color: white;
+  }
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  // background-color: green;
+  background-color: var(--background);
+  text-align: start;
+  padding: 0 0.6em;
+  // width: 90%;
+  width: 15em;
+  height: 2.5em;
+  line-height: 2.5em;
+  border-radius: 0.5em;
+}
+
+.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+  // color: white;
+  // background-color: var(--background);
+
+  padding: 0.6em;
+  width: 15em;
+  height: 2.5em;
 }

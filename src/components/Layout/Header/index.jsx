@@ -12,7 +12,7 @@ const user = {
   id: 1,
   name: "Nguyễn Văn A",
   avatarImg: "../../../assets/images/default-avatar.png",
-}
+};
 
 function Header() {
   // if (props) 

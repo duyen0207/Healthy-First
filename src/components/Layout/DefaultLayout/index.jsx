@@ -9,9 +9,7 @@ function DefaultLayout({ children }) {
     <div className={style.defaultLayout}>
       <Header />
       <div className={style.container}>
-        <Navbar />
         <div className="content">
-          <h2>Content</h2>
           {children}
         </div>
       </div>
