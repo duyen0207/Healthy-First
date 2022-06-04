@@ -32,6 +32,7 @@ function Home() {
             { label: "Sđt", name: "phoneNumber" },
             { label: "Loại hình kinh doanh", name: "typeOfBusiness" },
           ]}
+          select={true}
           handleSubmit={handleSubmit}
         />
       )}

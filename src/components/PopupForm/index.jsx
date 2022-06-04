@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Input, message } from "antd";
+import { Modal, Button, Input, message, Select } from "antd";
 import style from "./PopupForm.module.scss";
+
+const { Option } = Select;
 
 function Popup({
   isVisible,
@@ -9,9 +11,17 @@ function Popup({
   handleCancel,
   inputList,
   handleSubmit,
+  select,
 }) {
   const [input, setInput] = useState({});
   useEffect(() => {
+    if (select) {
+      const temp = {};
+      temp["status"] = "sent";
+      setInput((previous) => {
+        return { ...previous, ...temp };
+      });
+    }
     inputList.map((input) => {
       const temp = {};
       temp[input.name] = "";
@@ -37,6 +47,7 @@ function Popup({
           key="submit"
           type="primary"
           onClick={() => {
+            console.log(input);
             if (!Object.values(input).includes("")) handleSubmit(input);
             else message.warning("Hãy nhập các trường");
           }}
@@ -65,6 +76,29 @@ function Popup({
           />
         </div>
       ))}
+      {select ? (
+        <>
+          <label>Trạng thái</label>
+          <Select
+            name="status"
+            className={style.select}
+            defaultValue="sent"
+            style={{ width: 120 }}
+            onChange={(e) => {
+              const temp = {};
+              temp["status"] = e;
+              setInput((previous) => {
+                return { ...previous, ...temp };
+              });
+            }}
+          >
+            <Option value="sent">Đã gửi</Option>
+            <Option value="notSent">Chưa gửi</Option>
+          </Select>
+        </>
+      ) : (
+        <></>
+      )}
     </Modal>
   );
 }
