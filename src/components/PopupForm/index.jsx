@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Input } from "antd";
+import { Modal, Button, Input, message } from "antd";
 import style from "./PopupForm.module.scss";
 
 function Popup({
@@ -29,11 +29,7 @@ function Popup({
         <Button
           key="back"
           onClick={handleCancel}
-          style={{
-            color: "#30ABC2",
-            borderRadius: "10px",
-            borderColor: "#30ABC2",
-          }}
+          className={style.secondaryButton}
         >
           Hủy
         </Button>,
@@ -42,9 +38,9 @@ function Popup({
           type="primary"
           onClick={() => {
             if (!Object.values(input).includes("")) handleSubmit(input);
-            else alert("Input required");
+            else message.warning("Hãy nhập các trường");
           }}
-          style={{ backgroundColor: "#30ABC2", borderRadius: "10px" }}
+          className={style.primaryButton}
         >
           {okButton}
         </Button>,
