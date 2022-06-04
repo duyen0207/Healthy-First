@@ -1,0 +1,67 @@
+@use "../GlobalStyles/variables" as v;
+
+.manageStores {
+  background-color: v.$content-color;
+  height: 100%;
+  padding: 1em;
+  border-radius: 1em 0;
+//   position: fixed;
+  //   margin: 0 1em;
+  .title {
+    text-align: start;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    color: white;
+    // background-color: green;
+}
+  // Customize scrollbar
+}
+
+.insideManage {
+  background-color: white;
+  margin: 0 0.5em;
+  padding: 1em;
+  overflow: auto;
+  height: 100vh;
+
+  
+
+  &::-webkit-scrollbar {
+    width: 0.625em;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgb(212, 209, 209);
+    border-radius: 1em;
+    // width: 0.2em;
+  }
+}
+
+.storesList {
+    border: solid gray;
+    border-width: 0.1em 0 0 0;
+    
+}
+.summary {
+  display: flex;
+  margin-bottom: 1.5em;
+  justify-content: end;
+
+  .search {
+    width: 20em;
+  }
+
+  .addButton {
+    width: 10em;
+    margin-left: 1em;
+    display: flex;
+    align-items: center;
+  }
+}

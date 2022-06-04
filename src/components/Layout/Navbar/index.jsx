@@ -5,6 +5,8 @@ import { fa9, faCheckToSlot, faCircleInfo, faPager, faPeopleArrows, faPeopleCarr
 import style from "./Navbar.module.scss";
 import { faAddressCard } from "@fortawesome/free-regular-svg-icons";
 
+import ManageStores from "../../ManageStores";
+
 const { TabPane } = Tabs;
 
 function Navbar() {
@@ -21,7 +23,7 @@ function Navbar() {
           </div>
         }
       >
-
+        <ManageStores />
       </TabPane>
       <TabPane
         key="2"

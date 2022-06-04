@@ -17,7 +17,7 @@
   --primaryColor: #32b3ca;
   --hover: #6fc6d6;
   --background: #b1dee6;
-  --logo-color:#226570;
+  --logo-color: #226570;
 }
 
 * {
@@ -28,10 +28,6 @@
 
 html {
   font-size: 10px;
-
-  // @include v.tablet {
-  //   // font-size: 14px;
-  // }
 }
 
 body {
@@ -50,6 +46,11 @@ body,
   width: 100%;
 }
 
+.content {
+  // z-index: -1;
+  // position: static;
+  // margin-top: 4em;
+}
 // align center 1 item in div tag
 div.global-center {
   display: flex;
@@ -72,7 +73,7 @@ div.gray-background {
   margin-bottom: 0;
 }
 
-// Slider bootstrap
+//Customize bootstrap css
 
 .carousel,
 .carousel .carousel-item,
@@ -88,7 +89,8 @@ div.gray-background {
   height: 100%;
 }
 
-// antd Tabs
+// Customize Ant Design css
+
 // .ant-tabs-tab{
 //   padding: 0;
 //   margin: 0;
@@ -96,6 +98,10 @@ div.gray-background {
 
 .ant-tabs-nav {
   // background-color: gray;
+  // position: fixed;
+  // top: 0;
+  // right: 10em;
+  // bottom: 0;
   border-style: solid;
   border-color: gray;
   border-width: 0 0.1em 0 0;
@@ -151,4 +157,16 @@ div.gray-background {
   padding: 0.6em;
   width: 15em;
   height: 2.5em;
+}
+
+.ant-tabs-left
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane,
+.ant-tabs-left
+  > div
+  > .ant-tabs-content-holder
+  > .ant-tabs-content
+  > .ant-tabs-tabpane {
+  padding: 0;
 }

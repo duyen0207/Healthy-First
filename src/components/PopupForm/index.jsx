@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Input, message, Select } from "antd";
 import style from "./PopupForm.module.scss";
-import globalstyle from "../GlobalStyles/Button.module.scss";
+import buttonStyles from "../GlobalStyles/Button.module.scss";
 
 const { Option } = Select;
 
-function Popup({
+function PopupForm({
   isVisible,
   title,
   okButton,
@@ -40,7 +40,7 @@ function Popup({
         <Button
           key="back"
           onClick={handleCancel}
-          className={globalstyle.secondaryButton}
+          className={buttonStyles.secondaryButton}
         >
           Hủy
         </Button>,
@@ -52,7 +52,7 @@ function Popup({
             if (!Object.values(input).includes("")) handleSubmit(input);
             else message.warning("Hãy nhập các trường");
           }}
-          className={globalstyle.primaryButton}
+          className={buttonStyles.primaryButton}
         >
           {okButton}
         </Button>,
@@ -67,6 +67,7 @@ function Popup({
             className={style.input}
             type="text"
             placeholder={input.label}
+            defaultValue={input?.value}
             onChange={(e) => {
               const temp = {};
               temp[input.name] = e.target.value;
@@ -104,4 +105,4 @@ function Popup({
   );
 }
 
-export default Popup;
+export default PopupForm;

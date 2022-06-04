@@ -22,3 +22,22 @@
   background-color: #30abc2;
   border-radius: 1rem;
 }
+
+.actionBtn {
+  width: 4em;
+  background-color: white;
+  border: solid 0.0625em v.$pink-button-color;
+  border-radius: 600em;
+  color: v.$pink-button-color;
+  margin: 0 0.2em;
+
+  &:hover {
+    background-color: v.$pink-button-color;
+    color: white;
+
+  }
+  &:focus {
+    background-color: v.$pink-button-color;
+    color: white;
+  }
+}

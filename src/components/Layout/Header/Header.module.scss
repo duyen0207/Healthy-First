@@ -10,8 +10,9 @@
   top: 0;
   left: 0;
   right: 0;
-  // background-color: white;
-  background-color: var(--background);
+  background-color: white;
+  // background-color: var(--background);
+  z-index: 2;
 
 }
 
