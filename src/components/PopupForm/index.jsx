@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal, Button, Input, message, Select } from "antd";
 import style from "./PopupForm.module.scss";
+import globalstyle from "../GlobalStyles/Button.module.scss";
 
 const { Option } = Select;
 
@@ -39,7 +40,7 @@ function Popup({
         <Button
           key="back"
           onClick={handleCancel}
-          className={style.secondaryButton}
+          className={globalstyle.secondaryButton}
         >
           Hủy
         </Button>,
@@ -51,7 +52,7 @@ function Popup({
             if (!Object.values(input).includes("")) handleSubmit(input);
             else message.warning("Hãy nhập các trường");
           }}
-          className={style.primaryButton}
+          className={globalstyle.primaryButton}
         >
           {okButton}
         </Button>,
