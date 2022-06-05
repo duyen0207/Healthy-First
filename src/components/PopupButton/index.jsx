@@ -9,18 +9,13 @@ function PopupButton(type, props) {
 
     if(type=="popup-form") {
         const {
-            isVisible,
             title,
             okButton,
-            handleCancel,
             inputList,
-            handleSubmit,
             select,
           } = props;
     } else if (type=="popup-notification") {
         const {
-            isVisible,
-            handleCancel,
             title,
             okButton,
             content,
@@ -55,8 +50,8 @@ function PopupButton(type, props) {
       {showPopup && (
         <PopupForm
           isVisible={showPopup}
-          title={"Sửa cơ sở kinh doanh"}
-          okButton={"Cập nhật"}
+          title={title}
+          okButton={okButton}
           handleCancel={handleCancel}
           inputList={[
             { label: "Tên cơ sở", name: "storeName" },

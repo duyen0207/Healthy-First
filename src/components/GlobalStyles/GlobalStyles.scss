@@ -96,77 +96,149 @@ div.gray-background {
 //   margin: 0;
 // }
 
-.ant-tabs-nav {
-  // background-color: gray;
-  // position: fixed;
-  // top: 0;
-  // right: 10em;
-  // bottom: 0;
-  border-style: solid;
-  border-color: gray;
-  border-width: 0 0.1em 0 0;
-  padding: 0.5em;
-}
+.navbar {
+  .ant-tabs-nav {
+    // background-color: gray;
+    // position: fixed;
+    // top: 0;
+    // right: 10em;
+    // bottom: 0;
+    border-style: solid;
+    border-color: gray;
+    border-width: 0 0.1em 0 0;
+    padding: 0.5em;
+  }
 
-// .ant-tabs-tab{
-//   border: solid;
-//   text-align: center;
-//   align-items: center;
-// }
-.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
-.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
-.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
-.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
-  // background-color: green;
-  // margin: 0;
-  // padding: 0;
-}
+  // .ant-tabs-tab{
+  //   border: solid;
+  //   text-align: center;
+  //   align-items: center;
+  // }
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab + .ant-tabs-tab {
+    // background-color: green;
+    // margin: 0;
+    // padding: 0;
+  }
 
-.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
-  background-color: white;
-  // margin: 0;
-  padding: 0;
-  // border-radius: 0.5em;
-  &:active {
-    // background-color: white;
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    background-color: white;
+    // margin: 0;
+    padding: 0;
+    // border-radius: 0.5em;
+    &:active {
+      // background-color: white;
+    }
+  }
+
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    // background-color: green;
+    background-color: var(--background);
+    text-align: start;
+    padding: 0 0.6em;
+    // width: 90%;
+    width: 15em;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 0.5em;
+  }
+
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    // color: white;
+    // background-color: var(--background);
+
+    padding: 0.6em;
+    width: 15em;
+    height: 2.5em;
+  }
+
+  .ant-tabs-left
+    > .ant-tabs-content-holder
+    > .ant-tabs-content
+    > .ant-tabs-tabpane,
+  .ant-tabs-left
+    > div
+    > .ant-tabs-content-holder
+    > .ant-tabs-content
+    > .ant-tabs-tabpane {
+    padding: 0;
   }
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-  // background-color: green;
-  background-color: var(--background);
-  text-align: start;
-  padding: 0 0.6em;
-  // width: 90%;
-  width: 15em;
-  height: 2.5em;
-  line-height: 2.5em;
-  border-radius: 0.5em;
-}
+.navbarContent {
+  // background-color: v.$content-color;
+  .ant-tabs-nav {
+    background-color: v.$content-color;
+    // position: fixed;
+    // top: 0;
+    // right: 10em;
+    // bottom: 0;
+    width: 100%;
+    border-style: none;
+    border-color: gray;
+    border-width: 0 0 0 0;
+    padding: 0.5em;
+  }
 
-.ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
-.ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
-  // color: white;
-  // background-color: var(--background);
 
-  padding: 0.6em;
-  width: 15em;
-  height: 2.5em;
-}
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    background-color: white;
+    // margin: 0;
+    padding: 0;
+    // border-radius: 0.5em;
+    &:active {
+      // background-color: white;
+    }
+  }
 
-.ant-tabs-left
-  > .ant-tabs-content-holder
-  > .ant-tabs-content
-  > .ant-tabs-tabpane,
-.ant-tabs-left
-  > div
-  > .ant-tabs-content-holder
-  > .ant-tabs-content
-  > .ant-tabs-tabpane {
-  padding: 0;
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    background-color: v.$content-color;
+    // background-color: var(--background);
+    text-align: start;
+    padding: 0 0.6em;
+    // width: 90%;
+    width: auto;
+    height: 2.5em;
+    line-height: 2.5em;
+    border-radius: 0;
+    border: solid white;
+    font-weight: bold;
+    color: white;
+    border-width: 0 0 0.2em;
+  }
+
+  .ant-tabs-left > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-left > div > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > .ant-tabs-nav .ant-tabs-tab,
+  .ant-tabs-right > div > .ant-tabs-nav .ant-tabs-tab {
+    // color: white;
+    // background-color: var(--background);
+
+    padding: 0.6em;
+    width: auto;
+    height: 2.5em;
+  }
+
+  .ant-tabs-left
+    > .ant-tabs-content-holder
+    > .ant-tabs-content
+    > .ant-tabs-tabpane,
+  .ant-tabs-left
+    > div
+    > .ant-tabs-content-holder
+    > .ant-tabs-content
+    > .ant-tabs-tabpane {
+    padding: 0;
+  }
 }

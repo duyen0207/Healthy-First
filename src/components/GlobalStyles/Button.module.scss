@@ -24,7 +24,7 @@
 }
 
 .actionBtn {
-  width: 4em;
+  width: 5em;
   background-color: white;
   border: solid 0.0625em v.$pink-button-color;
   border-radius: 600em;
@@ -39,5 +39,17 @@
   &:focus {
     background-color: v.$pink-button-color;
     color: white;
+  }
+}
+.smallPrimary {
+  padding: 0.3em;
+  width: 5em;
+  background-color: var(--primaryColor);
+  border: solid 0.0625em var(--hover);
+  border-radius: 600em;
+  color: white;
+
+  &:hover {
+    background-color: var(--hover);
   }
 }

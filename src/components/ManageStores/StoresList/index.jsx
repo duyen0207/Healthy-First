@@ -67,7 +67,7 @@ const columns = [
   },
   {
     title: "Số cấp giấy chứng nhận",
-    dataIndex: "idCertificate",
+    dataIndex: "CertificationNumber",
   },
   {
     title: "Hành động",
@@ -96,7 +96,7 @@ for (let i = 0; i < 46; i++) {
     key: i,
     id: i,
     name: `Edward King ${i}`,
-    phone: "0837637559",
+    phone: "12345678",
     address: `New York, Park Lane no. ${i}`,
     businessType: "Chế biến thực phẩm",
     idCertificate: null,
