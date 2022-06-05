@@ -1,0 +1,23 @@
+@use "../GlobalStyles/variables" as v;
+
+.manageStores {
+  background-color: v.$content-color;
+  height: 100%;
+  padding: 1em;
+  border-radius: 1em 0;
+  //   position: fixed;
+  //   margin: 0 1em;
+  .title {
+    text-align: start;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+    color: white;
+    // background-color: green;
+  }
+  // Customize scrollbar
+}
+
+.tabpane {
+  background-color: none;
+}
