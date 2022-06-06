@@ -22,6 +22,7 @@ import ManageStores from "../../ManageStores";
 import ManageCertificate from "../../ManageCertificate";
 
 import Profile from "../../Profile";
+import InspectionActivity from "../../InspectionActivity";
 
 const { TabPane } = Tabs;
 
@@ -67,7 +68,7 @@ function Navbar() {
             </div>
           }
         >
-          <p>Content of Tab Pane 3</p>
+          <InspectionActivity />
         </TabPane>
 
         <TabPane
