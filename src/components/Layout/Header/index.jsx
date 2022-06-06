@@ -1,12 +1,12 @@
 import clsx from "clsx";
 
-
 import Logo from "../../../components/Logo";
 import Images from "../../GlobalStyles/Images";
 
 import style from "./Header.module.scss";
 import buttonStyles from "../../../components/GlobalStyles/Button.module.scss";
 import inputStyles from "../../../components/GlobalStyles/Input.module.scss";
+import AvatarDropdown from "../../AvatarDropdown";
 
 const user = {
   id: 1,
@@ -15,7 +15,7 @@ const user = {
 };
 
 function Header() {
-  // if (props) 
+  // if (props)
   // const { userData } = props;
 
   return (
@@ -36,14 +36,7 @@ function Header() {
 
       <div className={style.user}>
         {console.log(typeof user.avatarImg)}
-        <img
-          className={style.userAvatar}
-          // src={require(""+user.avatarImg)}
-          // src={require("../../../assets/images/default-avatar.png")}
-
-          src={Images.defaultAvatar}
-          alt="Nguyen Van A"
-        />
+        <AvatarDropdown user={user} />
       </div>
     </div>
   );
