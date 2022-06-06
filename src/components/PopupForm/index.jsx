@@ -18,7 +18,7 @@ function PopupForm({
   useEffect(() => {
     if (select) {
       const temp = {};
-      temp["status"] = "sent";
+      temp["status"] = "ok";
       setInput((previous) => {
         return { ...previous, ...temp };
       });
@@ -79,11 +79,11 @@ function PopupForm({
       ))}
       {select ? (
         <>
-          <label>Trạng thái</label>
+          <label>Kết quả</label>
           <Select
             name="status"
             className={style.select}
-            defaultValue="sent"
+            defaultValue="ok"
             style={{ width: 120 }}
             onChange={(e) => {
               const temp = {};
@@ -93,8 +93,8 @@ function PopupForm({
               });
             }}
           >
-            <Option value="sent">Đã gửi</Option>
-            <Option value="notSent">Chưa gửi</Option>
+            <Option value="ok">Đạt</Option>
+            <Option value="notOk">Không đạt</Option>
           </Select>
         </>
       ) : (
