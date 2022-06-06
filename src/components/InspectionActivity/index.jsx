@@ -48,6 +48,8 @@ function InspectionActivity() {
       </div>
       {showPopup && (
         <PopupForm
+          fillForm={false}
+          object={{}}
           isVisible={showPopup}
           title={"Lập kế hoạch thanh tra, kiểm tra"}
           okButton={"Lập kế hoạch"}

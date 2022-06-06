@@ -60,6 +60,8 @@ function ManageCertificate() {
       </div>
       {showPopup && (
         <PopupForm
+          fillForm={false}
+          object={{}}
           isVisible={showPopup}
           title={"Cấp mới giấy chứng nhận"}
           okButton={"Cấp mới"}

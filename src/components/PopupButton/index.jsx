@@ -4,23 +4,12 @@ import { Button } from "antd";
 import PopupForm from "../PopupForm";
 import PopupNotification from "../PopupNotification";
 
-
 function PopupButton(type, props) {
-
-    if(type=="popup-form") {
-        const {
-            title,
-            okButton,
-            inputList,
-            select,
-          } = props;
-    } else if (type=="popup-notification") {
-        const {
-            title,
-            okButton,
-            content,
-          } = props;
-    }
+  if (type == "popup-form") {
+    const { title, okButton, inputList, select } = props;
+  } else if (type == "popup-notification") {
+    const { title, okButton, content } = props;
+  }
 
   //Code phần này nên đưa vào 1 component riêng để có thể tái sử dụng trong trang quản
   const [showPopup, setShowPopup] = useState(false);
@@ -35,13 +24,13 @@ function PopupButton(type, props) {
     console.log(e);
   };
 
-//   const [showNotification, setShowNotification] = useState(false);
-//   const handleShowNotification = () => {
-//     setShowNotification(true);
-//   };
-//   const handleCancelNotification = () => {
-//     setShowNotification(false);
-//   };
+  //   const [showNotification, setShowNotification] = useState(false);
+  //   const handleShowNotification = () => {
+  //     setShowNotification(true);
+  //   };
+  //   const handleCancelNotification = () => {
+  //     setShowNotification(false);
+  //   };
   return (
     <>
       <Button type="primary" onClick={handleShowPopup}>
@@ -49,6 +38,8 @@ function PopupButton(type, props) {
       </Button>
       {showPopup && (
         <PopupForm
+          fillForm={false}
+          object={{}}
           isVisible={showPopup}
           title={title}
           okButton={okButton}

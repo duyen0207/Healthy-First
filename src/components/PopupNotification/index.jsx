@@ -9,7 +9,9 @@ function PopupNotification({
   handleCancel,
   title,
   okButton,
+  cancelButton,
   content,
+  okAction,
 }) {
   return (
     <Modal
@@ -22,12 +24,12 @@ function PopupNotification({
           onClick={handleCancel}
           className={globalstyle.secondaryButton}
         >
-          Xác nhận
+          {cancelButton}
         </Button>,
         <Button
           key="submit"
           type="primary"
-          onClick={handleCancel}
+          onClick={okAction}
           className={globalstyle.primaryButton}
         >
           {okButton}
