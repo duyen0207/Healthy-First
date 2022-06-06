@@ -21,10 +21,12 @@ function PlanList(props) {
     {
       title: "Tên cơ sở",
       dataIndex: "name",
+      width: 150,
     },
     {
       title: "Số cấp giấy chứng nhận",
       dataIndex: "idCertificate",
+      width: 180,
     },
     {
       title: "Ngày kiểm tra",
@@ -78,20 +80,19 @@ function PlanList(props) {
     {
       title: "Hành động",
       key: "operation",
-      width: 100,
-      render: (text, record) => (
-        <div className={style.actionBtn}>
+      width: 150,
+      render: (text, record) =>
+        record.status === "Chưa kiểm tra" && (
           <button
-            className={buttonStyles.actionBtn}
+            className={buttonStyles.updateResult}
             onClick={() => {
               setEditRecord(record);
               handleShowPopup();
             }}
           >
-            Cập nhật kết quả
+            Cập nhật kết quả {}
           </button>
-        </div>
-      ),
+        ),
     },
   ];
   const data = [];
@@ -141,16 +142,10 @@ function PlanList(props) {
           fillForm={true}
           object={editRecord}
           isVisible={showPopup}
-          title={"Cập nhật mẫu thực phẩm"}
+          title={`Kế hoạch kiểm tra cơ sở ${editRecord.name}`}
           okButton={"Cập nhật"}
           handleCancel={handleCancel}
-          inputList={[
-            { label: "Tên mẫu thực phẩm", name: "sampleName" },
-            { label: "Mã mẫu", name: "sampleId" },
-            { label: "Đơn vị giám định", name: "inspectionUnit" },
-            { label: "Trạng thái", name: "status" },
-            { label: "Ngày nhận kết quả", name: "date" },
-          ]}
+          inputList={[{ label: "Ngày kiểm tra", name: "date" }]}
           select={true}
           handleSubmit={handleSubmit}
         />

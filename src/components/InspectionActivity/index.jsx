@@ -57,7 +57,6 @@ function InspectionActivity() {
           inputList={[
             { label: "Tên cơ sở", name: "storeName" },
             { label: "Ngày kiểm tra", name: "date" },
-            { label: "Trạng thái", name: "status" },
           ]}
           select={false}
           handleSubmit={handleSubmit}

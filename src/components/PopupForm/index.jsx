@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, Button, Input, message, Select, Form } from "antd";
+import { Modal, Button, Input, message, Select, Form, Tag } from "antd";
 import style from "./PopupForm.module.scss";
 import buttonStyles from "../GlobalStyles/Button.module.scss";
 
@@ -20,19 +20,15 @@ function PopupForm({
   const [input, setInput] = useState({});
   useEffect(() => {
     if (select) {
-      const temp = {};
-      temp["status"] = "ok";
-      setInput((previous) => {
-        return { ...previous, ...temp };
+      setInput({ date: object.date, status: "checked", result: "ok" });
+    } else
+      inputList.map((input) => {
+        const temp = {};
+        temp[input.name] = "";
+        setInput((previous) => {
+          return { ...previous, ...temp };
+        });
       });
-    }
-    inputList.map((input) => {
-      const temp = {};
-      temp[input.name] = "";
-      setInput((previous) => {
-        return { ...previous, ...temp };
-      });
-    });
   }, []);
   return (
     <Modal
@@ -78,28 +74,32 @@ function PopupForm({
                   return { ...previous, ...temp };
                 });
               }}
-              value={object[input.name]}
+              defaultValue={fillForm ? object[input.name] : ""}
             />
           </div>
         ))}
         {select ? (
           <>
+            <div>
+              <label>Trạng thái</label>
+              <Tag color="green">Đã kiểm tra</Tag>
+            </div>
             <label>Kết quả</label>
             <Select
-              name="status"
+              name="result"
               className={style.select}
               defaultValue="ok"
               style={{ width: 120 }}
               onChange={(e) => {
                 const temp = {};
-                temp["status"] = e;
+                temp["result"] = e;
                 setInput((previous) => {
                   return { ...previous, ...temp };
                 });
               }}
             >
-              <Option value="ok">Đạt</Option>
-              <Option value="notOk">Không đạt</Option>
+              <Option value="ok">Đủ điều kiện</Option>
+              <Option value="notOk">Chưa đủ điều kiện</Option>
             </Select>
           </>
         ) : (
