@@ -48,6 +48,8 @@ function InspectionActivity() {
       </div>
       {showPopup && (
         <PopupForm
+          fillForm={false}
+          object={{}}
           isVisible={showPopup}
           title={"Lập kế hoạch thanh tra, kiểm tra"}
           okButton={"Lập kế hoạch"}
@@ -55,7 +57,6 @@ function InspectionActivity() {
           inputList={[
             { label: "Tên cơ sở", name: "storeName" },
             { label: "Ngày kiểm tra", name: "date" },
-            { label: "Trạng thái", name: "status" },
           ]}
           select={false}
           handleSubmit={handleSubmit}

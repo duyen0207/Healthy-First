@@ -48,6 +48,8 @@ function ManageStores() {
       </div>
       {showPopup && (
         <PopupForm
+          fillForm={false}
+          object={{}}
           isVisible={showPopup}
           title={"Thêm cơ sở kinh doanh"}
           okButton={"Thêm"}

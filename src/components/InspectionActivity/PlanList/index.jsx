@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Table, Tooltip } from "antd";
+import { Table, Tooltip, Tag } from "antd";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrashCan } from "@fortawesome/free-solid-svg-icons";
@@ -16,38 +16,83 @@ function PlanList(props) {
       dataIndex: "id",
       defaultSortOrder: "descend",
       sorter: (a, b) => a.id - b.id,
+      width: 100,
     },
     {
       title: "Tên cơ sở",
       dataIndex: "name",
+      width: 150,
     },
     {
       title: "Số cấp giấy chứng nhận",
       dataIndex: "idCertificate",
+      width: 180,
     },
     {
       title: "Ngày kiểm tra",
       dataIndex: "date",
+      width: 120,
     },
     {
       title: "Trạng thái",
+      key: "status",
       dataIndex: "status",
+      width: 120,
+      render: (_, object) => (
+        <Tag color={object.status == "Đã kiểm tra" ? "green" : "yellow"}>
+          {object.status}
+        </Tag>
+      ),
+      filters: [
+        {
+          text: "Đã kiểm tra",
+          value: "Đã kiểm tra",
+        },
+        {
+          text: "Chưa kiểm tra",
+          value: "Chưa kiểm tra",
+        },
+      ],
+      onFilter: (text, record) => record.status.indexOf(text) === 0,
     },
     {
       title: "Kết quả",
+      key: "result",
       dataIndex: "result",
+      width: 140,
+      render: (_, object) => (
+        <Tag color={object.result == "Đủ điều kiện" ? "blue" : "pink"}>
+          {object.result}
+        </Tag>
+      ),
+      filters: [
+        {
+          text: "Đủ điều kiện",
+          value: "Đủ điều kiện",
+        },
+        {
+          text: "Chưa đủ điều kiện",
+          value: "Chưa đủ điều kiện",
+        },
+      ],
+      onFilter: (text, record) => record.result.indexOf(text) === 0,
     },
     {
       title: "Hành động",
       key: "operation",
-      width: 100,
-      render: () => (
-        <div className={style.actionBtn}>
-          <button className={buttonStyles.actionBtn} onClick={handleShowPopup}>
-            Cập nhật kết quả
+      width: 150,
+      render: (text, record) =>
+        record.status === "Chưa kiểm tra" && (
+          <button
+            className={buttonStyles.updateResult}
+            onClick={() => {
+              setEditRecord(record);
+              handleShowPopup();
+            }}
+          >
+            Cập nhật kết quả {}
           </button>
-        </div>
-      ),
+        ),
     },
   ];
   const data = [];
@@ -67,6 +112,7 @@ function PlanList(props) {
       result: i % 2 === 0 ? "Đủ điều kiện" : "Chưa đủ điều kiện",
     });
   }
+  const [editRecord, setEditRecord] = useState({});
   const [showPopup, setShowPopup] = useState(false);
   const handleShowPopup = () => {
     setShowPopup(true);
@@ -93,17 +139,13 @@ function PlanList(props) {
       </div>
       {showPopup && (
         <PopupForm
+          fillForm={true}
+          object={editRecord}
           isVisible={showPopup}
-          title={"Cập nhật mẫu thực phẩm"}
+          title={`Kế hoạch kiểm tra cơ sở ${editRecord.name}`}
           okButton={"Cập nhật"}
           handleCancel={handleCancel}
-          inputList={[
-            { label: "Tên mẫu thực phẩm", name: "sampleName" },
-            { label: "Mã mẫu", name: "sampleId" },
-            { label: "Đơn vị giám định", name: "inspectionUnit" },
-            { label: "Trạng thái", name: "status" },
-            { label: "Ngày nhận kết quả", name: "date" },
-          ]}
+          inputList={[{ label: "Ngày kiểm tra", name: "date" }]}
           select={true}
           handleSubmit={handleSubmit}
         />
