@@ -2,17 +2,27 @@ import React from "react";
 import { Avatar, Popover, Button } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import style from "./AvatarDropdown.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRightFromBracket,
+  faGear,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 const content = (
-  <div>
+  <div className={style.dropDown}>
     <Button className={style.button} type="text" href="/profile">
-      Thông tin cá nhân
+      <FontAwesomeIcon icon={faUser} />
+      <label htmlFor="" className={style.label}>Thông tin cá nhân</label>
+      
     </Button>
     <Button className={style.button} type="text" href="/settings">
-      Cài đặt
+      <FontAwesomeIcon icon={faGear} />
+      <label htmlFor="" className={style.label}>Cài đặt</label>
     </Button>
     <Button className={style.button} type="text" href="/logout">
-      Đăng xuất
+      <FontAwesomeIcon icon={faArrowRightFromBracket} />
+      <label htmlFor="" className={style.label}>Đăng xuất</label>
     </Button>
   </div>
 );

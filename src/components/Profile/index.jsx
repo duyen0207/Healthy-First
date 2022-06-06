@@ -8,18 +8,20 @@ const { TabPane } = Tabs;
 
 function Profile({ id }) {
   return (
-    <div className={style.manageStores}>
-      <Tabs defaultActiveKey="1">
-        <TabPane
-          tab={<p className={style.tabpane}>Thông tin cá nhân</p>}
-          key="1"
-        >
-          <ProfileInfo id={id} />
-        </TabPane>
-        <TabPane tab="Đổi mật khẩu" key="2">
-          <ChangePassword id={id} />
-        </TabPane>
-      </Tabs>
+    <div className="navbarContent">
+      <div className={style.insideManage}>
+        <Tabs defaultActiveKey="1">
+          <TabPane
+            tab={<p className={style.tabpane}>Thông tin cá nhân</p>}
+            key="1"
+          >
+            <ProfileInfo id={id} />
+          </TabPane>
+          <TabPane tab="Đổi mật khẩu" key="2">
+            <ChangePassword id={id} />
+          </TabPane>
+        </Tabs>
+      </div>
     </div>
   );
 }

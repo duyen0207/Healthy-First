@@ -20,6 +20,7 @@ import style from "./Navbar.module.scss";
 
 import ManageStores from "../../ManageStores";
 import ManageCertificate from "../../ManageCertificate";
+import ManageStaff from "../../ManageStaff";
 
 import Profile from "../../Profile";
 import InspectionActivity from "../../InspectionActivity";
@@ -83,7 +84,7 @@ function Navbar() {
             </div>
           }
         >
-          <p>Content of Tab Pane 4</p>
+          <ManageStaff />
         </TabPane>
         <TabPane
           key="5"

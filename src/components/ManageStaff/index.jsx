@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import { Tabs, DatePicker } from "antd";
 import clsx from "clsx";
 
-import CertificateList from "./CertificateList";
-import Barchart from "../Barchart";
-
 import PopupForm from "../PopupForm";
+import StaffList from "./StaffList";
 import style from "../ManageStores/ManageStores.module.scss";
 import inputStyles from "../GlobalStyles/Input.module.scss";
 import buttonStyles from "../GlobalStyles/Button.module.scss";
-import thisStyle from "./ManageCertificate.module.scss";
-
 
 const { TabPane } = Tabs;
 
@@ -18,7 +14,7 @@ const onChange = (key) => {
   console.log(key);
 };
 
-function ManageCertificate() {
+function ManageStaff() {
   const [showPopup, setShowPopup] = useState(false);
   const handleShowPopup = () => {
     setShowPopup(true);
@@ -35,13 +31,13 @@ function ManageCertificate() {
       <div className="navbarContent">
         <div className={style.insideManage}>
           <Tabs defaultActiveKey="1" onChange={onChange}>
-            <TabPane tab="Quản lý giấy chứng nhận" key="1">
+            <TabPane tab="Quản lý chuyên viên" key="1">
               <div className={style.summary}>
                 <div className={style.search}>
                   <input
                     className={clsx(inputStyles.primary, inputStyles.search)}
                     type="text"
-                    placeholder="Số cấp giấy chứng nhận"
+                    placeholder="Tìm chuyên viên qua tài khoản"
                   />
                 </div>
 
@@ -50,34 +46,20 @@ function ManageCertificate() {
                     className={buttonStyles.primary}
                     onClick={handleShowPopup}
                   >
-                    Cấp mới
+                    Thêm mới
                   </button>
                 </div>
               </div>
-              <CertificateList />
+              <StaffList />
             </TabPane>
-            <TabPane tab="Thống kê" key="2">
-              <div className={thisStyle.datePicker}>
-                <DatePicker
-                  placeholder="Chọn năm"
-                  picker="year"
-                  bordered={true}
-                  className={thisStyle.chooseYear}
-                />
-              </div>
-              <Barchart />
-              <div className={thisStyle.chartName}>
-                Biểu đồ thống kê số lượng giấy chứng nhận cấp theo thời gian
-                theo loại hình cơ sở
-              </div>
+            <TabPane tab="Phân địa bàn" key="2">
+             thống kê
             </TabPane>
           </Tabs>
         </div>
       </div>
       {showPopup && (
         <PopupForm
-          fillForm={false}
-          object={{}}
           isVisible={showPopup}
           title={"Cấp mới giấy chứng nhận"}
           okButton={"Cấp mới"}
@@ -95,4 +77,4 @@ function ManageCertificate() {
   );
 }
 
-export default ManageCertificate;
+export default ManageStaff;

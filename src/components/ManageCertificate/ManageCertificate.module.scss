@@ -1,0 +1,19 @@
+@use "../GlobalStyles/variables" as v;
+
+
+.chartName {
+    font-style: italic;
+    text-align: center;
+    margin-top: 1em;
+}
+
+.datePicker {
+    display: flex;
+    justify-content: end;
+    padding: 2em 5em;
+}
+
+.chooseYear{
+    border-color: v.$pink-button-color;
+    // color: v.$pink-button-color;
+}
