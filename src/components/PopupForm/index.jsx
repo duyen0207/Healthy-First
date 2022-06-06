@@ -48,7 +48,6 @@ function PopupForm({
           key="submit"
           type="primary"
           onClick={() => {
-            console.log(input);
             if (!Object.values(input).includes("")) handleSubmit(input);
             else message.warning("Hãy nhập các trường");
           }}
