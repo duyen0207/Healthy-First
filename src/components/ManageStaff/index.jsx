@@ -4,6 +4,8 @@ import clsx from "clsx";
 
 import PopupForm from "../PopupForm";
 import StaffList from "./StaffList";
+import AssignArea from "./AssignArea";
+import AreaList from "./AreaList";
 import style from "../ManageStores/ManageStores.module.scss";
 import inputStyles from "../GlobalStyles/Input.module.scss";
 import buttonStyles from "../GlobalStyles/Button.module.scss";
@@ -53,7 +55,8 @@ function ManageStaff() {
               <StaffList />
             </TabPane>
             <TabPane tab="Phân địa bàn" key="2">
-              thống kê
+              <AssignArea />
+              <AreaList />
             </TabPane>
           </Tabs>
         </div>
