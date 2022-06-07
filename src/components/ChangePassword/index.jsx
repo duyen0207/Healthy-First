@@ -10,17 +10,15 @@ function ChangePassword({ id }) {
     newPassword: "",
     rePassword: "",
   };
-  const [password, setPassword] = useState({});
-  const [newPassword, setNewPassword] = useState({});
-  const [rePassword, setRePassword] = useState({});
+  const [allPass, setAllPass] = useState({});
   const [form] = Form.useForm();
 
   //TODO: có thể sử dụng useMutation từ use-query để update mật khẩu, onSuccess của mutation sẽ hiện lên thông báo thành công
   const onFinish = (values: any) => {
-    if (newPassword !== rePassword)
+    if (allPass?.newPassword !== allPass?.rePassword)
       message.warning("Mật khẩu mới không trùng khớp");
     else {
-      console.log("Success:", values);
+      message.success("Success:", values);
     }
   };
 
@@ -49,7 +47,13 @@ function ChangePassword({ id }) {
           name="password"
           rules={[{ required: true, message: "Hãy điền mật khẩu của bạn!" }]}
         >
-          <Input.Password />
+          <Input.Password
+            onChange={(e) => {
+              setAllPass((previous) => {
+                return { ...previous, password: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
 
         <Form.Item
@@ -57,7 +61,13 @@ function ChangePassword({ id }) {
           name="newPassword"
           rules={[{ required: true, message: "Hãy điền mật khẩu mới của bạn" }]}
         >
-          <Input.Password />
+          <Input.Password
+            onChange={(e) => {
+              setAllPass((previous) => {
+                return { ...previous, newPassword: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
         <Form.Item
           label="Nhập lại mật khẩu mới"
@@ -66,7 +76,13 @@ function ChangePassword({ id }) {
             { required: true, message: "Hãy nhập lại mật khẩu mới của bạn!" },
           ]}
         >
-          <Input.Password />
+          <Input.Password
+            onChange={(e) => {
+              setAllPass((previous) => {
+                return { ...previous, rePassword: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
