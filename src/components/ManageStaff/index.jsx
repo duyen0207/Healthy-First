@@ -53,7 +53,7 @@ function ManageStaff() {
               <StaffList />
             </TabPane>
             <TabPane tab="Phân địa bàn" key="2">
-             thống kê
+              thống kê
             </TabPane>
           </Tabs>
         </div>
@@ -61,13 +61,13 @@ function ManageStaff() {
       {showPopup && (
         <PopupForm
           isVisible={showPopup}
-          title={"Cấp mới giấy chứng nhận"}
-          okButton={"Cấp mới"}
+          title={"Thêm tài khoản chuyên viên"}
+          okButton={"Tạo tài khoản"}
           handleCancel={handleCancel}
           inputList={[
-            { label: "Tên cơ sở", name: "storeName" },
-            { label: "Ngày cấp", name: "date" },
-            { label: "Số cấp", name: "number" },
+            { label: "Tên chuyên viên", name: "name" },
+            { label: "Tên người dùng", name: "username" },
+            { label: "Mật khẩu", name: "password", password: true },
           ]}
           select={false}
           handleSubmit={handleSubmit}

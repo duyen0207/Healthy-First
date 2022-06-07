@@ -57,27 +57,52 @@ function PopupForm({
       ]}
     >
       <Form form={form}>
-        {inputList.map((input) => (
-          <div key={input.name}>
-            <label>{input.label}</label>
-            <Input
-              name={input.name}
-              required
-              className={style.input}
-              type="text"
-              placeholder={input.label}
-              defaultValue={input?.value}
-              onChange={(e) => {
-                const temp = {};
-                temp[input.name] = e.target.value;
-                setInput((previous) => {
-                  return { ...previous, ...temp };
-                });
-              }}
-              defaultValue={fillForm ? object[input.name] : ""}
-            />
-          </div>
-        ))}
+        {inputList.map((input) => {
+          if (input.password)
+            return (
+              <div key={input.name}>
+                <label>{input.label}</label>
+                <Input.Password
+                  name={"password"}
+                  required
+                  className={style.input}
+                  type="password"
+                  placeholder={input.label}
+                  defaultValue={input?.value}
+                  onChange={(e) => {
+                    const temp = {};
+                    temp[input.name] = e.target.value;
+                    setInput((previous) => {
+                      return { ...previous, ...temp };
+                    });
+                  }}
+                  defaultValue={fillForm ? object[input.name] : ""}
+                />
+              </div>
+            );
+          else
+            return (
+              <div key={input.name}>
+                <label>{input.label}</label>
+                <Input
+                  name={input.name}
+                  required
+                  className={style.input}
+                  type="text"
+                  placeholder={input.label}
+                  defaultValue={input?.value}
+                  onChange={(e) => {
+                    const temp = {};
+                    temp[input.name] = e.target.value;
+                    setInput((previous) => {
+                      return { ...previous, ...temp };
+                    });
+                  }}
+                  defaultValue={fillForm ? object[input.name] : ""}
+                />
+              </div>
+            );
+        })}
         {select ? (
           <>
             <div>

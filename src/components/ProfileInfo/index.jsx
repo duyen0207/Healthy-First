@@ -5,9 +5,6 @@ import moment from "moment";
 import buttonStyles from "../GlobalStyles/Button.module.scss";
 import style from "./ProfileInfo.module.scss";
 
-const onChange: DatePickerProps["onChange"] = (date, dateString) => {
-  console.log(date, dateString);
-};
 function ProfileInfo({ id }) {
   //TODO: fetch user data từ id và đưa vào dòng useState
   const data = {
@@ -19,13 +16,18 @@ function ProfileInfo({ id }) {
   const [profile, setProfile] = useState(data);
   const [form] = Form.useForm();
   form.setFieldsValue(profile);
+  const onChange: DatePickerProps["onChange"] = (date, dateString) => {
+    console.log(date, dateString);
+    setProfile((previous) => {
+      return { ...previous, dob: date };
+    });
+  };
 
   //TODO: có thể sử dụng useMutation để update profile, onSuccess sẽ hiển thị thông báo thành công (chưa có API nên ko dùng được)
   const onFinish = (values: any) => {
-    if (profile === data)
-      message.warning("Chưa có thông tin nào thay đổi hông tin không thay đổi");
+    if (profile === data) message.warning("Chưa có thông tin nào thay đổi");
     else {
-      console.log("Success:", values);
+      message.success("Success:", values);
     }
   };
 
@@ -54,7 +56,13 @@ function ProfileInfo({ id }) {
           name="name"
           rules={[{ required: true, message: "Hãy điền tên của bạn!" }]}
         >
-          <Input />
+          <Input
+            onChange={(e) => {
+              setProfile((previous) => {
+                return { ...previous, name: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
 
         <Form.Item
@@ -75,14 +83,26 @@ function ProfileInfo({ id }) {
             { required: true, message: "Hãy điền số điện thoại của bạn!" },
           ]}
         >
-          <Input />
+          <Input
+            onChange={(e) => {
+              setProfile((previous) => {
+                return { ...previous, phoneNumber: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
         <Form.Item
           label="Email"
           name="email"
           rules={[{ required: true, message: "Hãy điền email của bạn!" }]}
         >
-          <Input />
+          <Input
+            onChange={(e) => {
+              setProfile((previous) => {
+                return { ...previous, email: e.target.value };
+              });
+            }}
+          />
         </Form.Item>
 
         <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
