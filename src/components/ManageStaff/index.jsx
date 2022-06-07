@@ -66,8 +66,10 @@ function ManageStaff() {
           handleCancel={handleCancel}
           inputList={[
             { label: "Tên chuyên viên", name: "name" },
+            { label: "SĐT", name: "phone" },
             { label: "Tên người dùng", name: "username" },
             { label: "Mật khẩu", name: "password", password: true },
+            { label: "Vai trò", name: "role" },
           ]}
           select={false}
           handleSubmit={handleSubmit}

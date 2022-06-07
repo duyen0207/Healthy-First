@@ -81,6 +81,8 @@ function StoresList(props) {
           <button
             className={buttonStyles.actionBtn}
             onClick={() => {
+              delete record.id;
+              delete record.key;
               setEditRecord(record);
               handleShowPopup();
             }}
@@ -129,6 +131,7 @@ function StoresList(props) {
     setShowPopup(false);
   };
 
+  //TODO: hàm gọi API edit cơ sở ở đây
   const handleSubmit = (e) => {
     console.log(e);
   };

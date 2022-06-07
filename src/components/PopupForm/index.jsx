@@ -18,17 +18,23 @@ function PopupForm({
 }) {
   const [form] = Form.useForm();
   const [input, setInput] = useState({});
+
   useEffect(() => {
-    if (select) {
-      setInput({ date: object.date, status: "checked", result: "ok" });
-    } else
-      inputList.map((input) => {
-        const temp = {};
-        temp[input.name] = "";
-        setInput((previous) => {
-          return { ...previous, ...temp };
+    console.log(fillForm);
+    if (fillForm) {
+      setInput(object);
+    } else {
+      if (select) {
+        setInput({ date: object.date, status: "checked", result: "ok" });
+      } else
+        inputList.map((input) => {
+          const temp = {};
+          temp[input.name] = "";
+          setInput((previous) => {
+            return { ...previous, ...temp };
+          });
         });
-      });
+    }
   }, []);
   return (
     <Modal
@@ -68,7 +74,6 @@ function PopupForm({
                   className={style.input}
                   type="password"
                   placeholder={input.label}
-                  defaultValue={input?.value}
                   onChange={(e) => {
                     const temp = {};
                     temp[input.name] = e.target.value;
@@ -90,7 +95,6 @@ function PopupForm({
                   className={style.input}
                   type="text"
                   placeholder={input.label}
-                  defaultValue={input?.value}
                   onChange={(e) => {
                     const temp = {};
                     temp[input.name] = e.target.value;
